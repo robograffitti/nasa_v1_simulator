@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="v1/arm/mass_parameters">
+  <xacro:property name="AJ1_Link_Mass" value="2.45" />
+  <xacro:property name="AJ2_Link_Mass" value="3.67" />
+  <xacro:property name="AJ3_Link_Mass" value="2.575" />
+  <xacro:property name="AJ4_Link_Mass" value="1.367" />
+  <xacro:property name="AJ5_Link_Mass" value="2.703" />
+  <xacro:property name="AJ6_Link_Mass" value="0.5" />
+  <xacro:property name="AJ7_Link_Mass" value="1" />
+</robot>

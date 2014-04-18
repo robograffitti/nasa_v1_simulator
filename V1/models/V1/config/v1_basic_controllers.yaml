@@ -1,0 +1,446 @@
+v1:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  right_arm_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - RightShoulderExtensor
+      - RightShoulderAdductor
+      - RightShoulderSupinator
+      - RightElbowExtensor
+      - RightForearmSupinator
+      - RightWristExtensor
+      - RightWrist
+    gains:
+      RightShoulderExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightShoulderAdductor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightShoulderSupinator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightElbowExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightForearmSupinator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightWristExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightWrist:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory:
+      joints:
+        - RightShoulderExtensor
+        - RightShoulderAdductor
+        - RightShoulderSupinator
+        - RightElbowExtensor
+        - RightForearmSupinator
+        - RightWristExtensor
+        - RightWrist
+      constraints:
+        goal_time: 10.0
+        RightShoulderExtensor:
+          goal: 0.2
+        RightShoulderAdductor:
+          goal: 0.2
+        RightShoulderSupinator:
+          goal: 0.2
+        RightElbowExtensor:
+          goal: 0.2
+        RightForearmSupinator:
+          goal: 0.2
+        RightWristExtensor:
+          goal: 0.2
+        RightWrist:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+
+  left_arm_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - LeftShoulderExtensor
+      - LeftShoulderAdductor
+      - LeftShoulderSupinator
+      - LeftElbowExtensor
+      - LeftForearmSupinator
+      - LeftWristExtensor
+      - LeftWrist
+    gains:
+      LeftShoulderExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftShoulderAdductor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftShoulderSupinator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftElbowExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftForearmSupinator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftWristExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftWrist:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory:
+      joints:
+        - LeftShoulderExtensor
+        - LeftShoulderAdductor
+        - LeftShoulderSupinator
+        - LeftElbowExtensor
+        - LeftForearmSupinator
+        - LeftWristExtensor
+        - LeftWrist
+      constraints:
+        goal_time: 10.0
+        LeftShoulderExtensor:
+          goal: 0.2
+        LeftShoulderAdductor:
+          goal: 0.2
+        LeftShoulderSupinator:
+          goal: 0.2
+        LeftElbowExtensor:
+          goal: 0.2
+        LeftForearmSupinator:
+          goal: 0.2
+        LeftWristExtensor:
+          goal: 0.2
+        LeftWrist:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+  waist_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - WaistRotator
+      - WaistExtensor
+      - WaistLateralExtensor
+    gains:
+      WaistRotator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      WaistExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      WaistLateralExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory_node:
+      joints:
+        - WaistRotator
+        - WaistExtensor
+        - WaistLateralExtensor
+      constraints:
+        goal_time: 5.0
+        WaistRotator:
+          goal: 0.2
+        WaistExtensor:
+          goal: 0.2
+        WaistLateralExtensor:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+
+  neck_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - LowerNeckExtensor
+      - NeckRotator
+      - UpperNeckExtensor
+    gains:
+      LowerNeckExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      NeckRotator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      UpperNeckExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory_node:
+      joints:
+        - LowerNeckExtensor
+        - NeckRotator
+        - UpperNeckExtensor
+      constraints:
+        goal_time: 5.0
+        LowerNeckExtensor:
+          goal: 0.2
+        NeckRotator:
+          goal: 0.2
+        UpperNeckExtensor:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+  right_leg_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - RightHipRotator
+      - RightHipAdductor
+      - RightHipExtensor
+      - RightKneeExtensor
+      - RightAnkleExtensor
+      - RightAnkle
+    gains:
+      RightHipRotator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightHipAdductor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightHipExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightKneeExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      RightAnkleExtensor:
+          {p: 100.0, d: 20, i: 0, i_clamp: 4.0}
+      RightAnkle:
+          {p: 100.0, d: 20, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory:
+      joints:
+        - RightHipRotator
+        - RightHipAdductor
+        - RightHipExtensor
+        - RightKneeExtensor
+        - RightAnkleExtensor
+        - RightAnkle
+      constraints:
+        goal_time: 10.0
+        RightHipRotator:
+          goal: 0.2
+        RightHipAdductor:
+          goal: 0.2
+        RightHipExtensor:
+          goal: 0.2
+        RightKneeExtensor:
+          goal: 0.2
+        RightAnkleExtensor:
+          goal: 0.2
+        RightAnkle:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+  left_leg_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - LeftHipRotator
+      - LeftHipAdductor
+      - LeftHipExtensor
+      - LeftKneeExtensor
+      - LeftAnkleExtensor
+      - LeftAnkle
+    gains:
+      LeftHipRotator:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftHipAdductor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftHipExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftKneeExtensor:
+          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+      LeftAnkleExtensor:
+          {p: 100.0, d: 20, i: 0, i_clamp: 4.0}
+      LeftAnkle:
+          {p: 100.0, d: 20, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory:
+      joints:
+        - LeftHipRotator
+        - LeftHipAdductor
+        - LeftHipExtensor
+        - LeftKneeExtensor
+        - LeftAnkleExtensor
+        - LeftAnkle
+      constraints:
+        goal_time: 10.0
+        LeftHipRotator:
+          goal: 0.2
+        LeftHipAdductor:
+          goal: 0.2
+        LeftHipExtensor:
+          goal: 0.2
+        LeftKneeExtensor:
+          goal: 0.2
+        LeftAnkleExtensor:
+          goal: 0.2
+        LeftAnkle:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override defa
+
+  left_hand_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - LeftThumbMPYaw
+      - LeftThumbMPExtensor
+      - LeftThumbPIPExtensor
+      - LeftThumbDIPExtensor
+      - LeftPrimaryMPYaw
+      - LeftPrimaryMPExtensor
+      - LeftPrimaryPIPExtensor
+      - LeftPrimaryDIPExtensor
+      - LeftMiddleMPExtensor
+      - LeftMiddlePIPExtensor
+      - LeftMiddleDIPExtensor
+      - LeftLittleMPYaw
+      - LeftLittleMPExtensor
+      - LeftLittlePIPExtensor
+      - LeftLittleDIPExtensor
+    gains:
+      LeftThumbMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftThumbMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftThumbPIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftThumbDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftPrimaryMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftPrimaryMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftPrimaryPIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftPrimaryDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftMiddleMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftMiddlePIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftMiddleDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftLittleMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftLittleMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftLittlePIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      LeftLittleDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory_node:
+      joints:
+        - LeftThumbMPYaw
+        - LeftThumbMPExtensor
+        - LeftThumbPIPExtensor
+        - LeftThumbDIPExtensor
+        - LeftPrimaryMPYaw
+        - LeftPrimaryMPExtensor
+        - LeftPrimaryPIPExtensor
+        - LeftPrimaryDIPExtensor
+        - LeftMiddleMPExtensor
+        - LeftMiddlePIPExtensor
+        - LeftMiddleDIPExtensor
+        - LeftLittleMPYaw
+        - LeftLittleMPExtensor
+        - LeftLittlePIPExtensor
+        - LeftLittleDIPExtensor
+      constraints:
+        goal_time: 2.0
+        LeftThumbMPYaw:
+          goal: 0.2
+        LeftThumbMPExtensor:
+          goal: 0.2
+        LeftThumbPIPExtensor:
+          goal: 0.2
+        LeftThumbDIPExtensor:
+          goal: 0.2
+        LeftPrimaryMPYaw:
+          goal: 0.2
+        LeftPrimaryMPExtensor:
+          goal: 0.2
+        LeftPrimaryPIPExtensor:
+          goal: 0.2
+        LeftPrimaryDIPExtensor:
+          goal: 0.2
+        LeftMiddleMPExtensor:
+          goal: 0.2
+        LeftMiddlePIPExtensor:
+          goal: 0.2
+        LeftMiddleDIPExtensor:
+          goal: 0.2
+        LeftLittleMPYaw:
+          goal: 0.2
+        LeftLittleMPExtensor:
+          goal: 0.2
+        LeftLittlePIPExtensor:
+          goal: 0.2
+        LeftLittleDIPExtensor:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+  right_hand_controller:
+    type: "effort_controllers/JointTrajectoryController"
+    joints:
+      - RightThumbMPYaw
+      - RightThumbMPExtensor
+      - RightThumbPIPExtensor
+      - RightThumbDIPExtensor
+      - RightPrimaryMPYaw
+      - RightPrimaryMPExtensor
+      - RightPrimaryPIPExtensor
+      - RightPrimaryDIPExtensor
+      - RightMiddleMPExtensor
+      - RightMiddlePIPExtensor
+      - RightMiddleDIPExtensor
+      - RightLittleMPYaw
+      - RightLittleMPExtensor
+      - RightLittlePIPExtensor
+      - RightLittleDIPExtensor
+    gains:
+      RightThumbMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightThumbMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightThumbPIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightThumbDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightPrimaryMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightPrimaryMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightPrimaryPIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightPrimaryDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightMiddleMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightMiddlePIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightMiddleDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightLittleMPYaw: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightLittleMPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightLittlePIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+      RightLittleDIPExtensor: {p: 1.0, d: 0, i: 0, i_clamp: 4.0}
+    follow_joint_trajectory_node:
+      joints:
+        - RightThumbMPYaw
+        - RightThumbMPExtensor
+        - RightThumbPIPExtensor
+        - RightThumbDIPExtensor
+        - RightPrimaryMPYaw
+        - RightPrimaryMPExtensor
+        - RightPrimaryPIPExtensor
+        - RightPrimaryDIPExtensor
+        - RightMiddleMPExtensor
+        - RightMiddlePIPExtensor
+        - RightMiddleDIPExtensor
+        - RightLittleMPYaw
+        - RightLittleMPExtensor
+        - RightLittlePIPExtensor
+        - RightLittleDIPExtensor
+      constraints:
+        goal_time: 2.0
+        RightThumbMPYaw:
+          goal: 0.2
+        RightThumbMPExtensor:
+          goal: 0.2
+        RightThumbPIPExtensor:
+          goal: 0.2
+        RightThumbDIPExtensor:
+          goal: 0.2
+        RightPrimaryMPYaw:
+          goal: 0.2
+        RightPrimaryMPExtensor:
+          goal: 0.2
+        RightPrimaryPIPExtensor:
+          goal: 0.2
+        RightPrimaryDIPExtensor:
+          goal: 0.2
+        RightMiddleMPExtensor:
+          goal: 0.2
+        RightMiddlePIPExtensor:
+          goal: 0.2
+        RightMiddleDIPExtensor:
+          goal: 0.2
+        RightLittleMPYaw:
+          goal: 0.2
+        RightLittleMPExtensor:
+          goal: 0.2
+        RightLittlePIPExtensor:
+          goal: 0.2
+        RightLittleDIPExtensor:
+          goal: 0.2
+      state_publish_rate:  25            # Override default
+      action_monitor_rate: 30            # Override default
+      stop_trajectory_duration: 0        # Override default
+
+

@@ -1,0 +1,47 @@
+controller_list:
+  - name: v1/left_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LeftShoulderExtensor
+      - LeftShoulderAdductor
+      - LeftShoulderSupinator
+      - LeftElbowExtensor
+      - LeftForearmSupinator
+      - LeftWristExtensor
+      - LeftWrist
+  - name: v1/right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RightShoulderExtensor
+      - RightShoulderAdductor
+      - RightShoulderSupinator
+      - RightElbowExtensor
+      - RightForearmSupinator
+      - RightWristExtensor
+      - RightWrist
+  - name: v1/left_leg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LeftHipRotator
+      - LeftHipAdductor
+      - LeftHipExtensor
+      - LeftKneeExtensor
+      - LeftAnkleExtensor
+      - LeftAnkle
+  - name: v1/right_leg_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RightHipRotator
+      - RightHipAdductor
+      - RightHipExtensor
+      - RightKneeExtensor
+      - RightAnkleExtensor
+      - RightAnkle

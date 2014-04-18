@@ -1,0 +1,63 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="V1">
+    <!-- ======================================================= -->
+    <!-- DO NOT MODIFY URDF BY HAND! YOU ARE A FOOL IF YOU DO! -->
+    <!-- ======================================================= -->
+    <xacro:include filename="$(find common_xacro)/xacro/generic_models.xacro" />
+    <xacro:include filename="$(find V1)/models/V1/xacro/plugins/gazebo_plugins.xacro"/>
+
+    <xacro:include filename="$(find common_xacro)/xacro/common_properties.xacro" />
+    <xacro:include filename="$(find common_xacro)/xacro/materials.xacro" />
+    <xacro:include filename="$(find V1)/models/V1/xacro/common/common_bodies.xacro" />
+
+    <xacro:include filename="$(find V1)/models/V1/xacro/utility/utility.xacro" />
+    <xacro:include filename="$(find V1)/models/V1/xacro/common/actuator_names.xacro" />
+
+    <!-- ===== GAZEBO PLUGINS ===== -->
+    <xacro:v1_absolute_pose parentLink="${Pelvis_Link_Name}" topicName="/v1/pose" origin_xyz="0 0 0" origin_rpy="0 0 0"/>
+
+    <!-- ===== PELVIS ===== -->
+    <xacro:make_pelvis />
+
+   <!-- ===== TRUNK ===== -->
+    <xacro:make_waist waist_root_link="${Pelvis_Link_Name}" />
+
+    <!-- ===== HEAD ===== -->
+    <xacro:make_head head_root_link="${WJ3_Distal_Link}" />
+
+    <!-- ===== RIGHT ARM ===== -->
+    <xacro:make_arm prefix="Right" reflect="1" arm_root_link="${WJ3_Distal_Link}" />
+
+    <!-- ===== RIGHT THUMB ===== -->
+    <xacro:make_thumb prefix="Right" reflect="1" thumb_root_link="/v1/RightPalm"/>
+
+    <!-- ===== RIGHT PRIMARY FINGER ===== -->
+    <xacro:make_primary_finger prefix="Right" reflect="1" primary_finger_root_link="/v1/RightPalm"/>
+
+    <!-- ===== RIGHT MIDDLE FINGER ===== -->
+    <xacro:make_middle_finger prefix="Right" reflect="1" middle_finger_root_link="/v1/RightPalm"/>
+
+    <!-- ===== RIGHT LITTLE FINGER ===== -->
+    <xacro:make_little_finger prefix="Right" reflect="1" little_finger_root_link="/v1/RightPalm"/>
+
+    <!-- ===== LEFT ARM ===== -->
+    <xacro:make_arm prefix="Left" reflect="-1" arm_root_link="${WJ3_Distal_Link}" />
+
+    <!-- ===== LEFT THUMB ===== -->
+    <xacro:make_thumb prefix="Left" reflect="-1" thumb_root_link="/v1/LeftPalm"/>
+
+    <!-- ===== LEFT PRIMARY FINGER ===== -->
+    <xacro:make_primary_finger prefix="Left" reflect="-1" primary_finger_root_link="/v1/LeftPalm"/>
+
+    <!-- ===== LEFT MIDDLE FINGER ===== -->
+    <xacro:make_middle_finger prefix="Left" reflect="-1" middle_finger_root_link="/v1/LeftPalm"/>
+
+    <!-- ===== LEFT LITTLE FINGER ===== -->
+    <xacro:make_little_finger prefix="Left" reflect="-1" little_finger_root_link="/v1/LeftPalm"/>
+
+    <!-- ===== RIGHT LEG ===== -->
+    <xacro:make_leg prefix="Right" reflect="1" leg_root_link="${Pelvis_Link_Name}" />
+
+    <!-- ===== LEFT LEG ===== -->
+    <xacro:make_leg prefix="Left" reflect="-1" leg_root_link="${Pelvis_Link_Name}" />
+
+</robot>

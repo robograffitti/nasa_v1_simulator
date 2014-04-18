@@ -1,0 +1,281 @@
+joint_limits:
+  LeftMiddleDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightWristExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftThumbMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightAnkleExtensor:
+    has_velocity_limits: true
+    max_velocity: 11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftHipAdductor:
+    has_velocity_limits: true
+    max_velocity: 7
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightForearmSupinator:
+    has_velocity_limits: true
+    max_velocity: 5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftHipExtensor:
+    has_velocity_limits: true
+    max_velocity: 6.11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightMiddleDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftShoulderSupinator:
+    has_velocity_limits: true
+    max_velocity: 11.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightLittlePIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightKneeExtensor:
+    has_velocity_limits: true
+    max_velocity: 6.11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftShoulderExtensor:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftAnkleExtensor:
+    has_velocity_limits: true
+    max_velocity: 11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightElbowExtensor:
+    has_velocity_limits: true
+    max_velocity: 11.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightLittleDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftThumbPIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftPrimaryPIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftLittlePIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftKneeExtensor:
+    has_velocity_limits: true
+    max_velocity: 6.11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightThumbMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightMiddleMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftPrimaryDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftThumbMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightShoulderExtensor:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightShoulderAdductor:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftElbowExtensor:
+    has_velocity_limits: true
+    max_velocity: 11.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightWrist:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightLittleMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightHipExtensor:
+    has_velocity_limits: true
+    max_velocity: 6.11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftPrimaryMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftMiddleMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftShoulderAdductor:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftThumbDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightAnkle:
+    has_velocity_limits: true
+    max_velocity: 11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightHipRotator:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightPrimaryMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightPrimaryMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftAnkle:
+    has_velocity_limits: true
+    max_velocity: 11
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftWristExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightLittleMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightThumbMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftMiddlePIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightPrimaryPIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightPrimaryDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftForearmSupinator:
+    has_velocity_limits: true
+    max_velocity: 5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightShoulderSupinator:
+    has_velocity_limits: true
+    max_velocity: 11.5
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightThumbPIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightThumbDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftLittleDIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftLittleMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftHipRotator:
+    has_velocity_limits: true
+    max_velocity: 5.89
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftLittleMPYaw:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftPrimaryMPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightHipAdductor:
+    has_velocity_limits: true
+    max_velocity: 7
+    has_acceleration_limits: false
+    max_acceleration: 0
+  LeftWrist:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0
+  RightMiddlePIPExtensor:
+    has_velocity_limits: true
+    max_velocity: 1
+    has_acceleration_limits: false
+    max_acceleration: 0

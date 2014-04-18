@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="drc">
+  <!-- Cannot make into function because Xacro has psuedo lexical scoping -->
+  <xacro:property name="mode_data_interface" value="SimpleActuatorToJointMode"/>
+  <xacro:property name="mode_command_interface" value="SimpleJointToActuatorMode"/>
+</robot>

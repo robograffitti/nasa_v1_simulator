@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+
+<robot name="v1" xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller"
+			xmlns:interface="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface"
+			xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
+			xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
+
+  <xacro:property name="mesh_root" value="package://V1/models/V1/meshes/2013_05_16"/>
+  <xacro:property name="robot_name" value= "v1/"/>
+  <xacro:include filename="$(find V1)/models/V1/xacro/V1_sim_base.xacro"/>
+
+</robot>
+

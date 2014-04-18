@@ -1,0 +1,69 @@
+controller_list:
+  - name: fake_left_arm_controller
+    joints:
+      - LeftShoulderExtensor
+      - LeftShoulderAdductor
+      - LeftShoulderSupinator
+      - LeftElbowExtensor
+      - LeftForearmSupinator
+      - LeftWristExtensor
+      - LeftWrist
+  - name: fake_right_arm_controller
+    joints:
+      - RightShoulderExtensor
+      - RightShoulderAdductor
+      - RightShoulderSupinator
+      - RightElbowExtensor
+      - RightForearmSupinator
+      - RightWristExtensor
+      - RightWrist
+  - name: fake_left_hand_controller
+    joints:
+      - LeftLittleMPYaw
+      - LeftLittleMPExtensor
+      - LeftLittlePIPExtensor
+      - LeftLittleDIPExtensor
+      - LeftMiddleMPExtensor
+      - LeftMiddlePIPExtensor
+      - LeftMiddleDIPExtensor
+      - LeftPrimaryMPYaw
+      - LeftPrimaryMPExtensor
+      - LeftPrimaryPIPExtensor
+      - LeftPrimaryDIPExtensor
+      - LeftThumbMPYaw
+      - LeftThumbMPExtensor
+      - LeftThumbPIPExtensor
+      - LeftThumbDIPExtensor
+  - name: fake_right_hand_controller
+    joints:
+      - RightLittleMPYaw
+      - RightLittleMPExtensor
+      - RightLittlePIPExtensor
+      - RightLittleDIPExtensor
+      - RightMiddleMPExtensor
+      - RightMiddlePIPExtensor
+      - RightMiddleDIPExtensor
+      - RightPrimaryMPYaw
+      - RightPrimaryMPExtensor
+      - RightPrimaryPIPExtensor
+      - RightPrimaryDIPExtensor
+      - RightThumbMPYaw
+      - RightThumbMPExtensor
+      - RightThumbPIPExtensor
+      - RightThumbDIPExtensor
+  - name: fake_left_leg_controller
+    joints:
+      - LeftHipRotator
+      - LeftHipAdductor
+      - LeftHipExtensor
+      - LeftKneeExtensor
+      - LeftAnkleExtensor
+      - LeftAnkle
+  - name: fake_right_leg_controller
+    joints:
+      - RightHipRotator
+      - RightHipAdductor
+      - RightHipExtensor
+      - RightKneeExtensor
+      - RightAnkleExtensor
+      - RightAnkle
