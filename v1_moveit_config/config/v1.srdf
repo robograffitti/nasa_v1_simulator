@@ -1,0 +1,630 @@
+<?xml version="1.0" ?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="v1">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="left_arm">
+        <chain base_link="v1/Trunk" tip_link="v1/LeftPalm" />
+    </group>
+    <group name="right_arm">
+        <chain base_link="v1/Trunk" tip_link="v1/RightPalm" />
+    </group>
+    <group name="left_leg">
+        <chain base_link="v1/Pelvis" tip_link="v1/LeftUpperFoot" />
+    </group>
+    <group name="right_leg">
+        <chain base_link="v1/Pelvis" tip_link="v1/RightUpperFoot" />
+    </group>
+    <group name="left_hand">
+        <link name="v1/LeftPalm" />
+        <link name="/v1/LeftMedialMetacarpal" />
+        <link name="/v1/LeftLittleProximalPhalanx" />
+        <link name="/v1/LeftLittleMedialPhalanx" />
+        <link name="/v1/LeftLittleDistalPhalanx" />
+        <link name="/v1/LeftMiddleProximalPhalanx" />
+        <link name="/v1/LeftMiddleMedialPhalanx" />
+        <link name="/v1/LeftMiddleDistalPhalanx" />
+        <link name="/v1/LeftPrimaryMetacarpal" />
+        <link name="/v1/LeftPrimaryProximalPhalanx" />
+        <link name="/v1/LeftPrimaryMedialPhalanx" />
+        <link name="/v1/LeftPrimaryDistalPhalanx" />
+        <link name="/v1/LeftThumbMetacarpal" />
+        <link name="/v1/LeftThumbProximalPhalanx" />
+        <link name="/v1/LeftThumbMedialPhalanx" />
+        <link name="/v1/LeftThumbDistalPhalanx" />
+    </group>
+    <group name="right_hand">
+        <link name="v1/RightPalm" />
+        <link name="/v1/RightMedialMetacarpal" />
+        <link name="/v1/RightLittleProximalPhalanx" />
+        <link name="/v1/RightLittleMedialPhalanx" />
+        <link name="/v1/RightLittleDistalPhalanx" />
+        <link name="/v1/RightMiddleProximalPhalanx" />
+        <link name="/v1/RightMiddleMedialPhalanx" />
+        <link name="/v1/RightMiddleDistalPhalanx" />
+        <link name="/v1/RightPrimaryMetacarpal" />
+        <link name="/v1/RightPrimaryProximalPhalanx" />
+        <link name="/v1/RightPrimaryMedialPhalanx" />
+        <link name="/v1/RightPrimaryDistalPhalanx" />
+        <link name="/v1/RightThumbMetacarpal" />
+        <link name="/v1/RightThumbProximalPhalanx" />
+        <link name="/v1/RightThumbMedialPhalanx" />
+        <link name="/v1/RightThumbDistalPhalanx" />
+    </group>
+    <group name="left_foot">
+        <link name="v1/LeftUpperFoot" />
+    </group>
+    <group name="right_foot">
+        <link name="v1/RightUpperFoot" />
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="left_arm_ready_pose" group="left_arm">
+        <joint name="LeftElbowExtensor" value="-1.7" />
+        <joint name="LeftForearmSupinator" value="0" />
+        <joint name="LeftShoulderAdductor" value="-0.2" />
+        <joint name="LeftShoulderExtensor" value="0.3" />
+        <joint name="LeftShoulderSupinator" value="0" />
+        <joint name="LeftWrist" value="0" />
+        <joint name="LeftWristExtensor" value="0" />
+    </group_state>
+    <group_state name="right_arm_ready_pose" group="right_arm">
+        <joint name="RightElbowExtensor" value="-1.7" />
+        <joint name="RightForearmSupinator" value="0" />
+        <joint name="RightShoulderAdductor" value="-0.2" />
+        <joint name="RightShoulderExtensor" value="0.3" />
+        <joint name="RightShoulderSupinator" value="0" />
+        <joint name="RightWrist" value="0" />
+        <joint name="RightWristExtensor" value="0" />
+    </group_state>
+    <group_state name="left_leg_ready_pose" group="left_leg">
+        <joint name="LeftAnkle" value="0.1" />
+        <joint name="LeftAnkleExtensor" value="-0.3" />
+        <joint name="LeftHipAdductor" value="-0.1" />
+        <joint name="LeftHipExtensor" value="0" />
+        <joint name="LeftHipRotator" value="0" />
+        <joint name="LeftKneeExtensor" value="-0.7" />
+    </group_state>
+    <group_state name="right_leg_ready_pose" group="right_leg">
+        <joint name="RightAnkle" value="0.1" />
+        <joint name="RightAnkleExtensor" value="-0.3" />
+        <joint name="RightHipAdductor" value="-0.1" />
+        <joint name="RightHipExtensor" value="0" />
+        <joint name="RightHipRotator" value="0" />
+        <joint name="RightKneeExtensor" value="-0.7" />
+    </group_state>
+    <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+    <end_effector name="left_hand_ee" parent_link="v1/LeftPalm" group="left_hand" />
+    <end_effector name="right_hand_ee" parent_link="v1/RightPalm" group="right_hand" />
+    <end_effector name="left_foot_ee" parent_link="v1/LeftUpperFoot" group="left_foot" />
+    <end_effector name="right_foot_ee" parent_link="v1/RightUpperFoot" group="right_foot" />
+    <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+    <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="v1/Pelvis" />
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftLittleMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftLittleProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftMedialMetacarpal" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/LeftThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="v1/LeftPalm" reason="Default" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftLittleProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/LeftThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/LeftPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftMedialMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftMiddleMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftMiddleProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/LeftThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="v1/LeftPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftMiddleProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/LeftPrimaryMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/LeftPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/LeftPrimaryProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/LeftPrimaryProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/LeftPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/LeftPalm" reason="Default" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftPrimaryProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/LeftThumbMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/LeftThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/LeftThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/LeftThumbProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/LeftThumbProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/LeftPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightLittleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="v1/LeftPalm" reason="Default" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/LeftThumbProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightLittleMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightLittleProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightMedialMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightMedialMetacarpal" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/RightPalm" reason="Default" />
+    <disable_collisions link1="/v1/RightLittleProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightMiddleDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightMiddleMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightMiddleProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightThumbDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightThumbMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/RightPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightMedialMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightMiddleMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightMiddleProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightPrimaryDistalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/RightPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightMiddleProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="/v1/RightPrimaryMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="/v1/RightPrimaryMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="/v1/RightPrimaryProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="/v1/RightPrimaryProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/RightPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightPrimaryMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="v1/RightPalm" reason="Default" />
+    <disable_collisions link1="/v1/RightPrimaryProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="/v1/RightThumbMedialPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbDistalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="/v1/RightThumbMetacarpal" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="/v1/RightThumbProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMedialPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="/v1/RightThumbProximalPhalanx" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/LeftUpperFoot" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/RightPalm" reason="Adjacent" />
+    <disable_collisions link1="/v1/RightThumbMetacarpal" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/LeftAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/LeftWristYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/RightAnkleYoke" reason="Never" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/RightPalm" reason="Default" />
+    <disable_collisions link1="/v1/RightThumbProximalPhalanx" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="v1/LeftAnkleYoke" link2="v1/LeftPalm" reason="Never" />
+    <disable_collisions link1="v1/LeftAnkleYoke" link2="v1/LeftUpperFoot" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftAnkleYoke" link2="v1/LeftWristYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftAnkleYoke" link2="v1/RightAnkleYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftAnkleYoke" link2="v1/RightWristYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftPalm" link2="v1/LeftWristYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftPalm" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="v1/LeftPalm" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="v1/LeftUpperFoot" link2="v1/RightWristYoke" reason="Never" />
+    <disable_collisions link1="v1/LeftWristYoke" link2="v1/RightAnkleYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/LeftWristYoke" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="v1/LeftWristYoke" link2="v1/RightWristYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/RightAnkleYoke" link2="v1/RightPalm" reason="Never" />
+    <disable_collisions link1="v1/RightAnkleYoke" link2="v1/RightUpperFoot" reason="Adjacent" />
+    <disable_collisions link1="v1/RightAnkleYoke" link2="v1/RightWristYoke" reason="Adjacent" />
+    <disable_collisions link1="v1/RightPalm" link2="v1/RightWristYoke" reason="Adjacent" />
+</robot>
