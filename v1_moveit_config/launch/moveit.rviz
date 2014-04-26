@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /Global Options1
         - /InteractiveMarkers1
       Splitter Ratio: 0.74256
     Tree Height: 562
@@ -441,7 +442,7 @@ Visualization Manager:
       Value: true
   Enabled: true
   Global Options:
-    Background Color: 48; 48; 48
+    Background Color: 0; 0; 0
     Fixed Frame: world
     Frame Rate: 30
   Name: root
@@ -454,22 +455,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 3.75881
+      Distance: 2.8458
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.113567
-        Y: 0.10592
-        Z: 2.23518e-07
+        X: -0.240763
+        Y: 0.04046
+        Z: 3.42727e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.434797
+      Pitch: 0.464797
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 6.11995
+      Yaw: 0.431764
     Saved: ~
 Window Geometry:
   Displays:

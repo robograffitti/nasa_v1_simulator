@@ -45,3 +45,51 @@ controller_list:
       - RightKneeExtensor
       - RightAnkleExtensor
       - RightAnkle
+  - name: v1/neck_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LowerNeckExtensor
+      - NeckRotator
+      - UpperNeckExtensor
+  - name: v1/left_hand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - LeftThumbMPYaw
+      - LeftThumbMPExtensor
+      - LeftThumbPIPExtensor
+      - LeftThumbDIPExtensor
+      - LeftPrimaryMPYaw
+      - LeftPrimaryMPExtensor
+      - LeftPrimaryPIPExtensor
+      - LeftPrimaryDIPExtensor
+      - LeftMiddleMPExtensor
+      - LeftMiddlePIPExtensor
+      - LeftMiddleDIPExtensor
+      - LeftLittleMPYaw
+      - LeftLittleMPExtensor
+      - LeftLittlePIPExtensor
+      - LeftLittleDIPExtensor
+  - name: v1/right_hand_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - RightThumbMPYaw
+      - RightThumbMPExtensor
+      - RightThumbPIPExtensor
+      - RightThumbDIPExtensor
+      - RightPrimaryMPYaw
+      - RightPrimaryMPExtensor
+      - RightPrimaryPIPExtensor
+      - RightPrimaryDIPExtensor
+      - RightMiddleMPExtensor
+      - RightMiddlePIPExtensor
+      - RightMiddleDIPExtensor
+      - RightLittleMPYaw
+      - RightLittleMPExtensor
+      - RightLittlePIPExtensor
+      - RightLittleDIPExtensor

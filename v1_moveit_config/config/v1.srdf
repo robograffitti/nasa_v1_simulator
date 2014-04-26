@@ -22,7 +22,6 @@
         <chain base_link="v1/Pelvis" tip_link="v1/RightUpperFoot" />
     </group>
     <group name="left_hand">
-        <link name="v1/LeftPalm" />
         <link name="/v1/LeftMedialMetacarpal" />
         <link name="/v1/LeftLittleProximalPhalanx" />
         <link name="/v1/LeftLittleMedialPhalanx" />
@@ -40,7 +39,6 @@
         <link name="/v1/LeftThumbDistalPhalanx" />
     </group>
     <group name="right_hand">
-        <link name="v1/RightPalm" />
         <link name="/v1/RightMedialMetacarpal" />
         <link name="/v1/RightLittleProximalPhalanx" />
         <link name="/v1/RightLittleMedialPhalanx" />
@@ -62,6 +60,11 @@
     </group>
     <group name="right_foot">
         <link name="v1/RightUpperFoot" />
+    </group>
+    <group name="head">
+        <joint name="LowerNeckExtensor" />
+        <joint name="NeckRotator" />
+        <joint name="UpperNeckExtensor" />
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="left_arm_ready_pose" group="left_arm">
@@ -98,11 +101,118 @@
         <joint name="RightHipRotator" value="0" />
         <joint name="RightKneeExtensor" value="-0.7" />
     </group_state>
+    <group_state name="head_ready_pose" group="head">
+        <joint name="LowerNeckExtensor" value="-0.1" />
+        <joint name="NeckRotator" value="0" />
+        <joint name="UpperNeckExtensor" value="-0.0872" />
+    </group_state>
+    <group_state name="left_hand_open_pose" group="left_hand">
+        <joint name="LeftLittleDIPExtensor" value="0" />
+        <joint name="LeftLittleMPExtensor" value="0" />
+        <joint name="LeftLittleMPYaw" value="0" />
+        <joint name="LeftLittlePIPExtensor" value="0" />
+        <joint name="LeftMiddleDIPExtensor" value="0" />
+        <joint name="LeftMiddleMPExtensor" value="0.012" />
+        <joint name="LeftMiddlePIPExtensor" value="0" />
+        <joint name="LeftPrimaryDIPExtensor" value="0" />
+        <joint name="LeftPrimaryMPExtensor" value="0" />
+        <joint name="LeftPrimaryMPYaw" value="0" />
+        <joint name="LeftPrimaryPIPExtensor" value="0" />
+        <joint name="LeftThumbDIPExtensor" value="0" />
+        <joint name="LeftThumbMPExtensor" value="0" />
+        <joint name="LeftThumbMPYaw" value="0" />
+        <joint name="LeftThumbPIPExtensor" value="0" />
+    </group_state>
+    <group_state name="right_hand_open_pose" group="right_hand">
+        <joint name="RightLittleDIPExtensor" value="0" />
+        <joint name="RightLittleMPExtensor" value="0" />
+        <joint name="RightLittleMPYaw" value="0" />
+        <joint name="RightLittlePIPExtensor" value="0" />
+        <joint name="RightMiddleDIPExtensor" value="0" />
+        <joint name="RightMiddleMPExtensor" value="0" />
+        <joint name="RightMiddlePIPExtensor" value="0" />
+        <joint name="RightPrimaryDIPExtensor" value="0" />
+        <joint name="RightPrimaryMPExtensor" value="0" />
+        <joint name="RightPrimaryMPYaw" value="0" />
+        <joint name="RightPrimaryPIPExtensor" value="0" />
+        <joint name="RightThumbDIPExtensor" value="0" />
+        <joint name="RightThumbMPExtensor" value="0" />
+        <joint name="RightThumbMPYaw" value="0" />
+        <joint name="RightThumbPIPExtensor" value="0" />
+    </group_state>
+    <group_state name="right_hand_thumb_open" group="right_hand">
+        <joint name="RightLittleDIPExtensor" value="0" />
+        <joint name="RightLittleMPExtensor" value="0" />
+        <joint name="RightLittleMPYaw" value="0" />
+        <joint name="RightLittlePIPExtensor" value="0" />
+        <joint name="RightMiddleDIPExtensor" value="0" />
+        <joint name="RightMiddleMPExtensor" value="0" />
+        <joint name="RightMiddlePIPExtensor" value="0" />
+        <joint name="RightPrimaryDIPExtensor" value="0" />
+        <joint name="RightPrimaryMPExtensor" value="0" />
+        <joint name="RightPrimaryMPYaw" value="0" />
+        <joint name="RightPrimaryPIPExtensor" value="0" />
+        <joint name="RightThumbDIPExtensor" value="0" />
+        <joint name="RightThumbMPExtensor" value="0" />
+        <joint name="RightThumbMPYaw" value="1.5" />
+        <joint name="RightThumbPIPExtensor" value="0" />
+    </group_state>
+    <group_state name="left_hand_thumb_open" group="left_hand">
+        <joint name="LeftLittleDIPExtensor" value="0" />
+        <joint name="LeftLittleMPExtensor" value="0" />
+        <joint name="LeftLittleMPYaw" value="0" />
+        <joint name="LeftLittlePIPExtensor" value="0" />
+        <joint name="LeftMiddleDIPExtensor" value="0" />
+        <joint name="LeftMiddleMPExtensor" value="0" />
+        <joint name="LeftMiddlePIPExtensor" value="0" />
+        <joint name="LeftPrimaryDIPExtensor" value="0" />
+        <joint name="LeftPrimaryMPExtensor" value="-0.006" />
+        <joint name="LeftPrimaryMPYaw" value="0" />
+        <joint name="LeftPrimaryPIPExtensor" value="0" />
+        <joint name="LeftThumbDIPExtensor" value="0" />
+        <joint name="LeftThumbMPExtensor" value="0" />
+        <joint name="LeftThumbMPYaw" value="1.5" />
+        <joint name="LeftThumbPIPExtensor" value="0" />
+    </group_state>
+    <group_state name="left_hand_close_pose" group="left_hand">
+        <joint name="LeftLittleDIPExtensor" value="-1" />
+        <joint name="LeftLittleMPExtensor" value="-1" />
+        <joint name="LeftLittleMPYaw" value="0" />
+        <joint name="LeftLittlePIPExtensor" value="-1" />
+        <joint name="LeftMiddleDIPExtensor" value="-1" />
+        <joint name="LeftMiddleMPExtensor" value="-1" />
+        <joint name="LeftMiddlePIPExtensor" value="-1" />
+        <joint name="LeftPrimaryDIPExtensor" value="-1.006" />
+        <joint name="LeftPrimaryMPExtensor" value="-1" />
+        <joint name="LeftPrimaryMPYaw" value="-0.0872" />
+        <joint name="LeftPrimaryPIPExtensor" value="-1" />
+        <joint name="LeftThumbDIPExtensor" value="-0.75" />
+        <joint name="LeftThumbMPExtensor" value="-0.5" />
+        <joint name="LeftThumbMPYaw" value="1.5" />
+        <joint name="LeftThumbPIPExtensor" value="-0.5" />
+    </group_state>
+    <group_state name="right_hand_close_pose" group="right_hand">
+        <joint name="RightLittleDIPExtensor" value="0" />
+        <joint name="RightLittleMPExtensor" value="-1" />
+        <joint name="RightLittleMPYaw" value="0" />
+        <joint name="RightLittlePIPExtensor" value="-1" />
+        <joint name="RightMiddleDIPExtensor" value="-1" />
+        <joint name="RightMiddleMPExtensor" value="-1" />
+        <joint name="RightMiddlePIPExtensor" value="-1" />
+        <joint name="RightPrimaryDIPExtensor" value="-1" />
+        <joint name="RightPrimaryMPExtensor" value="-1" />
+        <joint name="RightPrimaryMPYaw" value="0.0872" />
+        <joint name="RightPrimaryPIPExtensor" value="-1" />
+        <joint name="RightThumbDIPExtensor" value="-0.75" />
+        <joint name="RightThumbMPExtensor" value="-0.5" />
+        <joint name="RightThumbMPYaw" value="1.5" />
+        <joint name="RightThumbPIPExtensor" value="-0.5" />
+    </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="left_hand_ee" parent_link="v1/LeftPalm" group="left_hand" />
-    <end_effector name="right_hand_ee" parent_link="v1/RightPalm" group="right_hand" />
-    <end_effector name="left_foot_ee" parent_link="v1/LeftUpperFoot" group="left_foot" />
-    <end_effector name="right_foot_ee" parent_link="v1/RightUpperFoot" group="right_foot" />
+    <end_effector name="left_hand_ee" parent_link="v1/LeftPalm" group="left_hand" parent_group="left_arm" />
+    <end_effector name="right_hand_ee" parent_link="v1/RightPalm" group="right_hand" parent_group="right_arm" />
+    <end_effector name="left_foot_ee" parent_link="v1/LeftUpperFoot" group="left_foot" parent_group="left_leg" />
+    <end_effector name="right_foot_ee" parent_link="v1/RightUpperFoot" group="right_foot" parent_group="right_leg" />
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="floating" parent_frame="world" child_link="v1/Pelvis" />
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->

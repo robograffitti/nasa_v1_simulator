@@ -35,7 +35,6 @@ controller_list:
       - RightAnkle
   - name: fake_left_hand_controller
     joints:
-      - LeftWrist
       - LeftLittleMPYaw
       - LeftLittleMPExtensor
       - LeftLittlePIPExtensor
@@ -53,7 +52,6 @@ controller_list:
       - LeftThumbDIPExtensor
   - name: fake_right_hand_controller
     joints:
-      - RightWrist
       - RightLittleMPYaw
       - RightLittleMPExtensor
       - RightLittlePIPExtensor
@@ -75,3 +73,8 @@ controller_list:
   - name: fake_right_foot_controller
     joints:
       - RightAnkle
+  - name: fake_head_controller
+    joints:
+      - LowerNeckExtensor
+      - NeckRotator
+      - UpperNeckExtensor
