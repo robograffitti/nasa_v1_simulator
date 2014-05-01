@@ -66,8 +66,13 @@
         <joint name="NeckRotator" />
         <joint name="UpperNeckExtensor" />
     </group>
+    <group name="waist">
+        <link name="v1/WaistRotator" />
+        <link name="v1/WaistExtensor" />
+        <link name="v1/Trunk" />
+    </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
-    <group_state name="left_arm_ready_pose" group="left_arm">
+    <group_state name="Left Arm Ready Pose" group="left_arm">
         <joint name="LeftElbowExtensor" value="-1.7" />
         <joint name="LeftForearmSupinator" value="0" />
         <joint name="LeftShoulderAdductor" value="-0.2" />
@@ -76,7 +81,7 @@
         <joint name="LeftWrist" value="0" />
         <joint name="LeftWristExtensor" value="0" />
     </group_state>
-    <group_state name="right_arm_ready_pose" group="right_arm">
+    <group_state name="Right Arm Ready Pose" group="right_arm">
         <joint name="RightElbowExtensor" value="-1.7" />
         <joint name="RightForearmSupinator" value="0" />
         <joint name="RightShoulderAdductor" value="-0.2" />
@@ -85,7 +90,7 @@
         <joint name="RightWrist" value="0" />
         <joint name="RightWristExtensor" value="0" />
     </group_state>
-    <group_state name="left_leg_ready_pose" group="left_leg">
+    <group_state name="Left Leg Ready Pose" group="left_leg">
         <joint name="LeftAnkle" value="0.1" />
         <joint name="LeftAnkleExtensor" value="-0.3" />
         <joint name="LeftHipAdductor" value="-0.1" />
@@ -93,7 +98,7 @@
         <joint name="LeftHipRotator" value="0" />
         <joint name="LeftKneeExtensor" value="-0.7" />
     </group_state>
-    <group_state name="right_leg_ready_pose" group="right_leg">
+    <group_state name="Right Leg Ready Pose" group="right_leg">
         <joint name="RightAnkle" value="0.1" />
         <joint name="RightAnkleExtensor" value="-0.3" />
         <joint name="RightHipAdductor" value="-0.1" />
@@ -101,12 +106,12 @@
         <joint name="RightHipRotator" value="0" />
         <joint name="RightKneeExtensor" value="-0.7" />
     </group_state>
-    <group_state name="head_ready_pose" group="head">
+    <group_state name="Head Ready Pose" group="head">
         <joint name="LowerNeckExtensor" value="-0.1" />
         <joint name="NeckRotator" value="0" />
         <joint name="UpperNeckExtensor" value="-0.0872" />
     </group_state>
-    <group_state name="left_hand_open_pose" group="left_hand">
+    <group_state name="Left Hand Open" group="left_hand">
         <joint name="LeftLittleDIPExtensor" value="0" />
         <joint name="LeftLittleMPExtensor" value="0" />
         <joint name="LeftLittleMPYaw" value="0" />
@@ -123,7 +128,7 @@
         <joint name="LeftThumbMPYaw" value="0" />
         <joint name="LeftThumbPIPExtensor" value="0" />
     </group_state>
-    <group_state name="right_hand_open_pose" group="right_hand">
+    <group_state name="Right Hand Open" group="right_hand">
         <joint name="RightLittleDIPExtensor" value="0" />
         <joint name="RightLittleMPExtensor" value="0" />
         <joint name="RightLittleMPYaw" value="0" />
@@ -140,7 +145,7 @@
         <joint name="RightThumbMPYaw" value="0" />
         <joint name="RightThumbPIPExtensor" value="0" />
     </group_state>
-    <group_state name="right_hand_thumb_open" group="right_hand">
+    <group_state name="Right Hand Thumb Open" group="right_hand">
         <joint name="RightLittleDIPExtensor" value="0" />
         <joint name="RightLittleMPExtensor" value="0" />
         <joint name="RightLittleMPYaw" value="0" />
@@ -157,7 +162,7 @@
         <joint name="RightThumbMPYaw" value="1.5" />
         <joint name="RightThumbPIPExtensor" value="0" />
     </group_state>
-    <group_state name="left_hand_thumb_open" group="left_hand">
+    <group_state name="Left Hand Thumb Open" group="left_hand">
         <joint name="LeftLittleDIPExtensor" value="0" />
         <joint name="LeftLittleMPExtensor" value="0" />
         <joint name="LeftLittleMPYaw" value="0" />
@@ -174,7 +179,7 @@
         <joint name="LeftThumbMPYaw" value="1.5" />
         <joint name="LeftThumbPIPExtensor" value="0" />
     </group_state>
-    <group_state name="left_hand_close_pose" group="left_hand">
+    <group_state name="Left Hand Close" group="left_hand">
         <joint name="LeftLittleDIPExtensor" value="-1" />
         <joint name="LeftLittleMPExtensor" value="-1" />
         <joint name="LeftLittleMPYaw" value="0" />
@@ -191,7 +196,7 @@
         <joint name="LeftThumbMPYaw" value="1.5" />
         <joint name="LeftThumbPIPExtensor" value="-0.5" />
     </group_state>
-    <group_state name="right_hand_close_pose" group="right_hand">
+    <group_state name="Right Hand Close" group="right_hand">
         <joint name="RightLittleDIPExtensor" value="0" />
         <joint name="RightLittleMPExtensor" value="-1" />
         <joint name="RightLittleMPYaw" value="0" />
@@ -207,6 +212,36 @@
         <joint name="RightThumbMPExtensor" value="-0.5" />
         <joint name="RightThumbMPYaw" value="1.5" />
         <joint name="RightThumbPIPExtensor" value="-0.5" />
+    </group_state>
+    <group_state name="Head Down" group="head">
+        <joint name="LowerNeckExtensor" value="-0.7" />
+        <joint name="NeckRotator" value="0" />
+        <joint name="UpperNeckExtensor" value="0.05" />
+    </group_state>
+    <group_state name="Head Left" group="head">
+        <joint name="LowerNeckExtensor" value="-0.1" />
+        <joint name="NeckRotator" value="0.5" />
+        <joint name="UpperNeckExtensor" value="0" />
+    </group_state>
+    <group_state name="Head Right" group="head">
+        <joint name="LowerNeckExtensor" value="-0.1" />
+        <joint name="NeckRotator" value="-0.5" />
+        <joint name="UpperNeckExtensor" value="0" />
+    </group_state>
+    <group_state name="Waist Left" group="waist">
+        <joint name="WaistExtensor" value="-0.2" />
+        <joint name="WaistLateralExtensor" value="0" />
+        <joint name="WaistRotator" value="0.55" />
+    </group_state>
+    <group_state name="Waist Right" group="waist">
+        <joint name="WaistExtensor" value="-0.2" />
+        <joint name="WaistLateralExtensor" value="0" />
+        <joint name="WaistRotator" value="-0.55" />
+    </group_state>
+    <group_state name="Waist Zero" group="waist">
+        <joint name="WaistExtensor" value="-0.2" />
+        <joint name="WaistLateralExtensor" value="0" />
+        <joint name="WaistRotator" value="-0" />
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="left_hand_ee" parent_link="v1/LeftPalm" group="left_hand" parent_group="left_arm" />

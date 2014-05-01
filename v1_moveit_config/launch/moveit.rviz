@@ -5,9 +5,10 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /InteractiveMarkers1
+        - /MotionPlanning1/Planning Request1
+        - /MotionPlanning1/Planned Path1
       Splitter Ratio: 0.74256
-    Tree Height: 562
+    Tree Height: 903
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -52,11 +53,11 @@ Visualization Manager:
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
         Loop Animation: false
-        Robot Alpha: 0.5
+        Robot Alpha: 0.1
         Show Robot Collision: false
         Show Robot Visual: true
         Show Trail: false
-        State Display Time: 0.05 s
+        State Display Time: REALTIME
         Trajectory Topic: /move_group/display_planned_path
       Planning Metrics:
         Payload: 1
@@ -72,7 +73,7 @@ Visualization Manager:
         Interactive Marker Size: 0
         Joint Violation Color: 255; 0; 255
         Planning Group: left_arm
-        Query Goal State: true
+        Query Goal State: false
         Query Start State: false
         Show Workspace: false
         Start State Alpha: 1
@@ -96,7 +97,7 @@ Visualization Manager:
           Link Tree Style: Links in Alphabetic Order
         Robot Alpha: 0.5
         Show Robot Collision: false
-        Show Robot Visual: true
+        Show Robot Visual: false
       Value: false
     - Alpha: 1
       Class: rviz/RobotModel
@@ -434,11 +435,19 @@ Visualization Manager:
     - Class: rviz/InteractiveMarkers
       Enable Transparency: true
       Enabled: true
-      Name: InteractiveMarkers
+      Name: Robot Teleop
       Show Axes: false
       Show Descriptions: true
       Show Visual Aids: false
       Update Topic: /v1_teleop/update
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /v1/move_group/planned_path_visualization
+      Name: Path Visualization
+      Namespaces:
+        {}
+      Queue Size: 100
       Value: true
   Enabled: true
   Global Options:
@@ -455,22 +464,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 2.8458
+      Distance: 3.87409
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.240763
-        Y: 0.04046
+        X: -0.483213
+        Y: 0.0627781
         Z: 3.42727e-07
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.464797
+      Pitch: 0.359798
       Target Frame: world
       Value: XYOrbit (rviz)
-      Yaw: 0.431764
+      Yaw: 0.306773
     Saved: ~
 Window Geometry:
   Displays:
@@ -482,7 +491,7 @@ Window Geometry:
   Hide Right Dock: false
   Motion Planning:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000001000000000000026f00000438fc0200000005fb000000100044006900730070006c006100790073010000003f000002c7000000e900fffffffb0000000800480065006c00700000000342000000bb0000007c00fffffffb0000000a0056006900650077007300000003b0000000b0000000b600fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e0067010000030c0000016b0000016b00ffffff000005090000043800000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000001000000000000010f00000438fc0200000005fb000000100044006900730070006c006100790073010000003f0000041c000000e900fffffffb0000000800480065006c00700000000342000000bb0000007c00fffffffb0000000a0056006900650077007300000003b0000000b0000000b600fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000461000000160000001600000016000006690000043800000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
   Width: 1918

@@ -53,6 +53,14 @@ controller_list:
       - LowerNeckExtensor
       - NeckRotator
       - UpperNeckExtensor
+  - name: v1/waist_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: true
+    joints:
+      - WaistExtensor
+      - WaistLateralExtensor
+      - WaistRotator
   - name: v1/left_hand_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory

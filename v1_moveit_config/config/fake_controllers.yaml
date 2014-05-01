@@ -78,3 +78,8 @@ controller_list:
       - LowerNeckExtensor
       - NeckRotator
       - UpperNeckExtensor
+  - name: fake_waist_controller
+    joints:
+      - WaistRotator
+      - WaistExtensor
+      - WaistLateralExtensor

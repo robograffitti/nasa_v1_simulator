@@ -152,7 +152,7 @@ v1:
       - UpperNeckExtensor
     gains:
       LowerNeckExtensor:
-          {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
+          {p: 2000.0, d: 100, i: 0, i_clamp: 4.0}
       NeckRotator:
           {p: 1000.0, d: 60, i: 0, i_clamp: 4.0}
       UpperNeckExtensor:
