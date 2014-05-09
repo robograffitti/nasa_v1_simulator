@@ -36,7 +36,7 @@
   <!-- Use buildtool_depend for build tool packages: -->
   <!--   <buildtool_depend>catkin</buildtool_depend> -->
   <!-- Use run_depend for packages you need at runtime: -->
-  <run_depend>V1</run_depend>
+  <run_depend>v1_description</run_depend>
   <run_depend>common_xacro</run_depend>
   <run_depend>V1_moveit_config</run_depend>
   <!-- Use test_depend for packages you need only for testing: -->

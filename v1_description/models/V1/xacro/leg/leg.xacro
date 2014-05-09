@@ -5,14 +5,14 @@
 
             http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
   -->
-  <xacro:include filename="$(find V1)/models/V1/xacro/leg/joint_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/leg/link_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/leg/joint_limits.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/leg/dh_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/leg/mass_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/camboard.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/hokuyo.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/hw_sensors.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/leg/joint_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/leg/link_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/leg/joint_limits.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/leg/dh_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/leg/mass_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/camboard.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/hokuyo.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/hw_sensors.xacro"/>
 
   <!-- Link properties. -->
   <xacro:property name="LJ1_Link_Width" value="0.149"/>

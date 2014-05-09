@@ -5,12 +5,12 @@
 
             http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
   -->
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/joint_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/actuator_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/link_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/joint_limits.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/dh_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/thumb/mass_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/joint_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/actuator_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/link_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/joint_limits.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/dh_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/thumb/mass_parameters.xacro"/>
 
   <!-- Link properties. -->
   <xacro:property name="TJ1_Link_Width" value="0.010"/>

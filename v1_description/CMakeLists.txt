@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(V1)
+project(v1_description)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -82,7 +82,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES V1
+#  LIBRARIES v1_description
 #  CATKIN_DEPENDS roscpp rospy sensor_msgs std_msgs
 #  DEPENDS system_lib
 )
@@ -99,19 +99,19 @@ include_directories(
 )
 
 ## Declare a cpp library
-# add_library(V1
-#   src/${PROJECT_NAME}/V1.cpp
+# add_library(v1_description
+#   src/${PROJECT_NAME}/v1_description.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(V1_node src/V1_node.cpp)
+# add_executable(V1_node src/v1_description_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(V1_node V1_generate_messages_cpp)
+# add_dependencies(v1_description_node v1_description_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(V1_node
+# target_link_libraries(v1_description_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -130,7 +130,7 @@ include_directories(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS V1 V1_node
+# install(TARGETS v1_description v1_description_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -155,7 +155,7 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_V1.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_v1_description.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

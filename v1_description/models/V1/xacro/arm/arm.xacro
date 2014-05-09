@@ -5,12 +5,12 @@
 
             http://bender.jsc.nasa.gov/confluence/pages/viewpage.action?pageId=16417593
   -->
-  <xacro:include filename="$(find V1)/models/V1/xacro/arm/joint_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/arm/link_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/arm/joint_limits.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/arm/dh_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/arm/mass_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/camboard.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/arm/joint_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/arm/link_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/arm/joint_limits.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/arm/dh_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/arm/mass_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/camboard.xacro"/>
 
   <!-- Link properties. -->
   <!-- <xacro:property name="AJ1_Link_Radius" value="0.080" />

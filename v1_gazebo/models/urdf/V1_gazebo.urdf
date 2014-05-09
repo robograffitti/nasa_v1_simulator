@@ -66,7 +66,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/pelvis.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/pelvis.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -75,7 +75,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/pelvis.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/pelvis.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -91,7 +91,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/wj3.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/wj3.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -100,7 +100,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/wj3.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/wj3.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -197,7 +197,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/nj1.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/nj1.stl"/>
       </geometry>
       <material name="gold">
         <color rgba="1 0.67 0 1"/>
@@ -206,7 +206,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/nj1.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/nj1.stl"/>
       </geometry>
     </collision>
   </link>
@@ -220,7 +220,7 @@
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/nj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/nj2.stl"/>
       </geometry>
       <material name="gold">
         <color rgba="1 0.67 0 1"/>
@@ -229,7 +229,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/nj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/nj2.stl"/>
       </geometry>
     </collision>
   </link>
@@ -243,7 +243,7 @@
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <!-- <origin rpy="${origin_rpy}" xyz="${origin_xyz}"/> -->
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/head.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/head.stl"/>
         <!-- <sphere radius="${radius}"/> -->
       </geometry>
       <material name="White"/>
@@ -251,7 +251,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/head.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/head.stl"/>
       </geometry>
     </collision>
   </link>
@@ -329,7 +329,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj1_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj1_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -338,7 +338,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj1_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj1_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -354,7 +354,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj2.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -363,7 +363,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -379,7 +379,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj3_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj3_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -388,7 +388,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj3_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj3_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -404,7 +404,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj4.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj4.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -413,7 +413,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj4.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj4.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -477,7 +477,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj5_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj5_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -486,7 +486,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj5_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj5_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -522,7 +522,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/palm_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/palm_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -531,7 +531,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/palm_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/palm_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -646,7 +646,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj1_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj1_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -655,7 +655,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj1_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj1_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -671,7 +671,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj2.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -680,7 +680,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -696,7 +696,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj3_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj3_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -705,7 +705,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj3_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj3_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -721,7 +721,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj4.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj4.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -730,7 +730,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj4.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj4.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -794,7 +794,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj5_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj5_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -803,7 +803,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/aj5_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/aj5_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -839,7 +839,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/palm_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/palm_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -848,7 +848,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/palm_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/palm_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -963,7 +963,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj1_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj1_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -972,7 +972,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj1_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj1_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -988,7 +988,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj2.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -997,7 +997,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1013,7 +1013,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj3_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj3_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1022,7 +1022,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj3_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj3_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1038,7 +1038,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj4_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj4_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1047,7 +1047,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj4_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj4_Right.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1083,7 +1083,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj6_Right.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj6_Right.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1243,7 +1243,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj1_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj1_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1252,7 +1252,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj1_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj1_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1268,7 +1268,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj2.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1277,7 +1277,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj2.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj2.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1293,7 +1293,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj3_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj3_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1302,7 +1302,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj3_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj3_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1318,7 +1318,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj4_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj4_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1327,7 +1327,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj4_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj4_Left.stl"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </collision>
@@ -1363,7 +1363,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://V1/models/V1/meshes/2013_05_16/lj6_Left.stl"/>
+        <mesh filename="package://v1_description/models/V1/meshes/2013_05_16/lj6_Left.stl"/>
         <!-- <box size="${width} ${height} ${depth}"/> -->
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>

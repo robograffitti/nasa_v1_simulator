@@ -5,7 +5,7 @@
 			xmlns:sensor="http://playerstage.sourceforge.net/gazebo/xmlschema/#sensor"
 			xmlns:xacro="http://playerstage.sourceforge.net/gazebo/xmlschema/#interface">
 
-  <xacro:property name="mesh_root" value="package://V1/models/V1/meshes/2013_05_16"/>
+  <xacro:property name="mesh_root" value="package://v1_description/models/V1/meshes/2013_05_16"/>
   <xacro:property name="robot_name" value= "v1/"/>
   <xacro:include filename="$(find v1_gazebo)/models/xacro/v1_sim_base.xacro"/>
 

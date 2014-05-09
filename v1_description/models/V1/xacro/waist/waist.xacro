@@ -6,14 +6,14 @@
   -->
 
   <!-- Properties -->
-  <xacro:include filename="$(find V1)/models/V1/xacro/waist/joint_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/waist/link_names.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/waist/joint_limits.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/waist/dh_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/waist/mass_parameters.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/microstrain.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/virtual_sensor.xacro"/>
-  <xacro:include filename="$(find V1)/models/V1/xacro/sensors/flea.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/waist/joint_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/waist/link_names.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/waist/joint_limits.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/waist/dh_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/waist/mass_parameters.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/microstrain.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/virtual_sensor.xacro"/>
+  <xacro:include filename="$(find v1_description)/models/V1/xacro/sensors/flea.xacro"/>
 
   <!-- TODO: Get waist approximation correct -->
   <xacro:property name="Trunk_Width" value="0.477"/>

@@ -1,6 +1,6 @@
 #! /usr/bin/env python
 
-import roslib; roslib.load_manifest('V1')
+import roslib; roslib.load_manifest('v1_description')
 import rospy
 import actionlib
 import math
