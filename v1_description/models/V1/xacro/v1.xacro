@@ -7,7 +7,7 @@
 
   <xacro:property name="mesh_root" value="package://v1_description/models/V1/meshes/2013_05_16"/>
   <xacro:property name="robot_name" value= "v1/"/>
-  <xacro:include filename="$(find v1_description)/models/V1/xacro/V1_sim_base.xacro"/>
+  <xacro:include filename="$(find v1_gazebo)/models/xacro/v1_sim_base.xacro"/>
 
 </robot>
 
